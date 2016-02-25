@@ -1,7 +1,19 @@
 (* 目的:誕生日(月と日)を受け取って、星座を返す *)
 (* seiza : int -> int -> string *)
-let seiza x y = "牡羊座"
-
+let seiza x y = 
+    if (x == 3 && 21 <= y) || (x == 4 && y <= 20) then "牡羊座"
+    else if (x == 4 && 21 <= y) || (x == 5 && y <= 20) then "牡牛座"
+    else if (x == 5 && 20 <= y) || (x == 6 && y <= 21) then "双子座"
+    else if (x == 6 && 22 <= y) || (x == 7 && y <= 23) then "蟹座"
+    else if (x == 7 && 24 <= y) || (x == 8 && y <= 23) then "獅子座"
+    else if (x == 8 && 24 <= y) || (x == 9 && y <= 23) then "乙女座"
+    else if (x == 9 && 24 <= y) || (x == 10 && y <= 23) then "天秤座"
+    else if (x == 10 && 24 <= y) || (x == 11 && y <= 22) then "蠍座"
+    else if (x == 11 && 23 <= y) || (x == 12 && y <= 22) then "射手座"
+    else if (x == 12 && 23 <= y) || (x == 1 && y <= 20) then "山羊座"
+    else if (x == 1 && 21 <= y) || (x == 2 && y <= 19) then "水瓶座"
+    else if (x == 2 && 20 <= y) || (x == 3 && y <= 20) then "魚座"
+    else "hogehoge"
 let test1 = seiza 3 21 = "牡羊座"
 let test2 = seiza 4 20 = "牡羊座"
 let test3 = seiza 4 21 = "牡牛座"
@@ -26,3 +38,5 @@ let test21 = seiza 1 21 = "水瓶座"
 let test22 = seiza 2 19 = "水瓶座"
 let test23 = seiza 2 20 = "魚座"
 let test24 = seiza 3 20 = "魚座"
+let test25 = seiza 1 19 = "山羊座"
+let test25 = seiza 14 4  = "hogehoge"
