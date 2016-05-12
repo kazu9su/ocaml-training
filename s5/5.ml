@@ -8,5 +8,5 @@ let kai_no_kosuu a b c =
     else 0
 
 let test5 = kai_no_kosuu 1.0 4.0 1.0 = 2
-let test5 = kai_no_kosuu 1.0 2.0 1.0 = 1
-let test5 = kai_no_kosuu 1.0 1.0 1.0 = 0
+let test6 = kai_no_kosuu 1.0 2.0 1.0 = 1
+let test7 = kai_no_kosuu 1.0 1.0 1.0 = 0
