@@ -6,6 +6,7 @@ let rec insert lst n = match lst with
         then first :: (insert rest n)
         else n :: lst
 
-let test4 = insert [1;3;4;7;8] 5 = [1;3;4;5;7;8]
-let test5 = insert [1] 2 = [1;2]
-let test6 = insert [] 1 = [1]
+let test1 = insert [1;3;4;7;8] 5 = [1;3;4;5;7;8]
+let test2 = insert [1] 2 = [1;2]
+let test3 = insert [] 1 = [1]
+let test4 = insert [1;3;4;6;8] 7 = [1;3;4;6;7;9]
