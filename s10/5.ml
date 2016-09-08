@@ -5,6 +5,7 @@ type gakusei_t = {
 }
 
 (* 目的: gakusei_t型のリストを受け取ったらlstの中で最高得点を取った人のレコードを返す *)
+(* gakusei_max : gakusei_t list -> gakusei_t *)
 let rec gakusei_max lst = match lst with
     [] -> {namae = ""; tensuu = min_int; seiseki = ""}
     | ({namae = n; tensuu = t; seiseki = s;} as first) :: rest ->
