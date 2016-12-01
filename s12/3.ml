@@ -8,9 +8,9 @@ let rec shokika lst kiten = match (lst) with
     [] -> []
     | ({ namae; saitan_kyori; temae_list }) as target :: rest ->
             if namae = kiten then
-                {namae = namae; saitan_kyori = 0.0; temae_list = [namae]} :: rest
+                {namae = namae; saitan_kyori = 0.0; temae_list = [namae]} :: (shokika rest kiten)
             else
-                shokika (rest @ [target]) kiten
+                target :: (shokika rest kiten)
 
 let data = [
     {namae = "代々木上原"; saitan_kyori = infinity; temae_list = []};
@@ -19,7 +19,7 @@ let data = [
 ]
 
 let test1 = shokika data "代々木公園" = [
+    {namae = "代々木上原"; saitan_kyori = infinity; temae_list = []};
     {namae = "代々木公園"; saitan_kyori = 0.; temae_list = ["代々木公園"]};
     {namae = "明治神宮前"; saitan_kyori = infinity; temae_list = []};
-    {namae = "代々木上原"; saitan_kyori = infinity; temae_list = []};
 ]
