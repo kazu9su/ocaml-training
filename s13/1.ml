@@ -10,4 +10,4 @@ let rec count_ketsueki lst blood_type0 = match (lst) with
             count_ketsueki rest blood_type0
 
 let test1 = count_ketsueki lst4 "A" = 2
-let test1 = count_ketsueki [] "A" = 0
+let test2 = count_ketsueki [] "A" = 0
