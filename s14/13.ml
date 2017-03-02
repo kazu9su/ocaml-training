@@ -5,14 +5,14 @@
  * 必要な更新処理を行った後の未確定の駅のリストを返す *)
 (* koushin : eki_t -> eki_t list -> eki_t list *)
 
-let koushin = fun p v ->
+let koushin = fun p v -> match p with
+    {namae = n_p; saitan_kyori = s_p; temae_list = t_p} ->
     let rec retrieve_ekikan_kyori x y ekikan_lst = match ekikan_lst with
         [] -> infinity
         | {kiten; shuten; keiyu; kyori; jikan} :: rest ->
             if (kiten = x && shuten = y) || (kiten = y && shuten = x) then kyori
             else retrieve_ekikan_kyori x y rest
-    in List.map( fun q -> match p with
-    {namae = n_p; saitan_kyori = s_p; temae_list = t_p} -> match q with
+    in List.map( fun q -> match q with
         {namae = n_q; saitan_kyori = s_q; temae_list = t_q} ->
             let kyori = retrieve_ekikan_kyori n_p n_q global_ekikan_list in
             if kyori = infinity then
