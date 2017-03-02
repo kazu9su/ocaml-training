@@ -15,14 +15,11 @@ let koushin = fun p v -> match p with
     in List.map( fun q -> match q with
         {namae = n_q; saitan_kyori = s_q; temae_list = t_q} ->
             let kyori = retrieve_ekikan_kyori n_p n_q global_ekikan_list in
-            if kyori = infinity then
-                q
+            if ((s_p +. kyori) < s_q) then
+                {namae = n_q; saitan_kyori = s_p +. kyori; temae_list = n_p::t_q}
             else
-                if (s_p < s_q) then
-                    {namae = n_q; saitan_kyori = s_p +. kyori; temae_list = n_p::t_q}
-                else
-                    q
-    ) v
+                q
+) v
 
 let test1 = koushin {namae = "代々木上原"; saitan_kyori = 0.; temae_list = [];} [
     {namae = "代々木公園"; saitan_kyori = infinity; temae_list = []};
