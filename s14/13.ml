@@ -19,7 +19,7 @@ let koushin = fun p v -> match p with
                 {namae = n_q; saitan_kyori = s_p +. kyori; temae_list = n_p::t_q}
             else
                 q
-) v
+    ) v
 
 let test1 = koushin {namae = "代々木上原"; saitan_kyori = 0.; temae_list = [];} [
     {namae = "代々木公園"; saitan_kyori = infinity; temae_list = []};
