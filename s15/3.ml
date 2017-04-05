@@ -4,9 +4,8 @@
  * 4. 2. 以降をリストが空になるまで繰り返す *)
 let rec sieve lst = match lst with
     [] -> []
-    | first :: rest -> if rest = [] then [first]
-    else sieve (List.filter (fun item -> (!=) (item mod first) 0) rest)
+    | first :: rest -> first :: sieve (List.filter (fun item -> (!=) (item mod first) 0) rest)
 
 let test1 = sieve [] = []
 let test2 = sieve [2] = [2]
-let test3 = sieve [2; 4;]
+let test3 = sieve [2; 4; 8; 3; 9; 10] = [2; 3]
