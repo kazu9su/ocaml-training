@@ -11,7 +11,7 @@ let koushin = fun p v lst -> match p with
         {namae = n_q; saitan_kyori = s_q; temae_list = t_q} ->
             let kyori = get_ekikan_kyori n_p n_q lst in
             if ((s_p +. kyori) < s_q) then
-                {namae = n_q; saitan_kyori = s_p +. kyori; temae_list = n_p::t_q}
+                {namae = n_q; saitan_kyori = s_p +. kyori; temae_list = n_q::t_p}
             else
                 q
     ) v
@@ -20,7 +20,6 @@ let test1 = koushin {namae = "代々木上原"; saitan_kyori = 0.; temae_list = 
     {namae = "代々木公園"; saitan_kyori = infinity; temae_list = []};
     {namae = "明治神宮前"; saitan_kyori = infinity; temae_list = []};
 ] global_ekikan_list = [
-    {namae = "代々木公園"; saitan_kyori = 1.; temae_list = ["代々木上原"]};
-    {namae = "明治神宮前"; saitan_kyori = infinity; temae_list = []};
+    {namae = "代々木公園"; saitan_kyori = 1.; temae_list = ["代々木公園"]};
+    {namae = "明治神宮前"; saitan_kyori = infinity; temae_list = []}
 ]
-
