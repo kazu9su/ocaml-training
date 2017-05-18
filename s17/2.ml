@@ -8,5 +8,5 @@ type year_t = January of int
             | August of int
             | September of int
             | October of int
-            | Novenber of int
+            | November of int
             | December of int
